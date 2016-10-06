@@ -4,13 +4,14 @@ This repository contains a basic Docker image that provides a simple HAProxy-bas
 
 ## Usage
 
-Set the `BACKEND_URL` environment variable to the URL of the backend server that should receive the incoming TCP requests.
+Configuration environment variables:
 
-You may change the default timeouts using the following variables:
-
-* `TIMEOUT_CONNECT_MS` (default 5000ms).
-* `TIMEOUT_CLIENT_MS` (default 120000ms).
-* `TIMEOUT_SERVER_MS` (default 120000ms).
+Name | Description | Default
+--- | --- | ---
+`BACKEND_URL` | URL of the backend server that should receive the incoming TCP requests | *Required*
+`TIMEOUT_CONNECT_MS` | See HAProxy `timeout connect` configuration parameter | `5000`
+`TIMEOUT_CLIENT_MS` | See HAProxy `timeout client` configuration parameter | `120000`
+`TIMEOUT_SERVER_MS` | See HAProxy `timeout server` configuration parameter | `120000`
 
 The reverse proxy listens on port 80 by default.
 
