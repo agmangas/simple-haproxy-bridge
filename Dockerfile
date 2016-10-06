@@ -1,3 +1,7 @@
 FROM haproxy:1.5
 
+ENV TIMEOUT_CONNECT_MS 5000
+ENV TIMEOUT_CLIENT_MS 120000
+ENV TIMEOUT_SERVER_MS 120000
+
 COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
